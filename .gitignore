@@ -52,4 +52,4 @@ Module.symvers
 Mkfile.old
 dkms.conf
 labrabota2-1
-main.o
+main

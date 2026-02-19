@@ -23,9 +23,9 @@ args = "Run C Program"
 name = "Run C Program"
 author = "agent"
 
+[workflows.workflow.metadata]
+outputType = "console"
+
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "gcc src/main.c -o main && ./main"
-
-[workflows.workflow.metadata]
-outputType = "console"

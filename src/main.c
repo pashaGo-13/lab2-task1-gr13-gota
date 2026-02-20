@@ -2,6 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 
+int countOnes(int n) {
+	int count = 0;
+	while (n) {
+		count += n & 1;
+		n >>= 1;
+	}
+	return count;
+}
+
 int main(int argc, char *argv[]) {
 
 	if (argc != 2){

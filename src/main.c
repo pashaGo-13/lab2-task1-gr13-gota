@@ -11,6 +11,19 @@ int countOnes(int n) {
 	return count;
 }
 
+int compare(const void *a, const void *b) {
+	int onesA = countOnes(*(int*)a);
+	int onesB = countOnes(*(int*)b);
+	if (onesA < onesB)
+		return -1;
+	else if (onesA > onesB) {
+		return 1;
+	} else {
+		return 0;
+	}
+		
+}
+
 int main(int argc, char *argv[]) {
 
 	if (argc != 2){
@@ -37,5 +50,12 @@ int main(int argc, char *argv[]) {
 			printf("%d ", arr[i]);
 	}
 	printf("\n");
+	qsort(arr, n, sizeof(int), compare);
+	printf("Отсортированный массив:\n");
+	for (int i = 0; i < n; i++) {
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+	free(arr);
 	return 0;
 }
